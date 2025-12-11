@@ -1,15 +1,15 @@
 <?php
 // Autoloader sederhana
-spl_autoload_register(function($class) {
-    $classPath = str_replace(['App\\', '\\'], ['', '/'], $class);
-    $baseDir = dirname(__DIR__) . '/App/'; // tetap ke folder app dari public/
-    $file = $baseDir . $classPath . '.php';
-    
-    if (file_exists($file)) {
-        require_once $file;
-    } else {
-        error_log("File not found class: $class ($file)");
-    }
+spl_autoload_register(function ($class) {
+  $classPath = str_replace(['App\\', '\\'], ['', '/'], $class);
+  $baseDir = dirname(__DIR__) . '/App/'; // tetap ke folder app dari public/
+  $file = $baseDir . $classPath . '.php';
+
+  if (file_exists($file)) {
+    require_once $file;
+  } else {
+    error_log("File not found class: $class ($file)");
+  }
 });
 
 // Load core files
